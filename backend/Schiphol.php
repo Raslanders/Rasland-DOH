@@ -20,7 +20,7 @@ Class Schiphol {
         $json = json_decode($response, true);
         if(empty($json['Flights'])) {
             //Fight does not exist or does not depart from Schiphol
-            return array('statusCode' => '404',
+            return array('statusCode' => '400',
                          'message' => 'Flight does not exist');
         }
         else {
@@ -46,7 +46,7 @@ Class Schiphol {
         $json = json_decode($response, true);
         if(empty($json['Flights'])) {
             //Fight does not exist or does not depart from Schiphol
-            return array('statusCode' => '404',
+            return array('statusCode' => '400',
                          'message' => 'Flight does not exist');
         }
         else {

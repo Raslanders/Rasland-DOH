@@ -15,7 +15,7 @@ Class Checkin {
             // Check if id is in database
             if (sizeof($result) === 0) {
                 //Person is not in database
-                return array('statusCode' => '404',
+                return array('statusCode' => '400',
                              'message' => 'id was not found in the database');
 
             } else {
