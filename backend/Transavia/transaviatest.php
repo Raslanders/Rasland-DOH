@@ -1,90 +1,101 @@
 <?php
-$url = "TransaviaCopy2.csv";
 
-$transaviaArray = [];
+Class Transaviatest {
 
-$flightNumber = "HV6583";
-$row = 0;
-$found =false ;
-$personsInGroup =[];
-$currentHighest = 0;
-
-
-if (($handle = fopen($url, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 0, ",")) !== FALSE)    
+    public function getPersonsInGroup($flightNumber)
     {
-    //    print( $row);
-  //      print ("<br >");
-        if (($data[1].$data[2] == $flightNumber))
-        {
-            $digits = $data[3];
-            $year1 = substr($digits, -4);
-            $month1 = substr(substr($digits, -6),2);
-            $day1 = substr($digits,strlen($digits)-6);
-
-            $year2 = substr($currentHighest, -4);
-            $month2 = substr(substr($currentHighest, -6),2);
-            $day2 = substr($digits,strlen($currentHighest)-6);
-
-            //check if the date is more recent than the one we had in storage, if it is, remove the groups in storage and continue
-            if ($year1 < $year2) 
-            {
-                continue;
-            }
-            if ($year1 > $year2)
-            {
-                $currentHighest = $digits;
-            }
-            if ($year1 == $year2)
-            {
-                //check month now
-                if ($month1 < $month2) 
-                {
-                    continue;
-                }
-                if ($month1 > $month2)
-                {
-                    $currentHighest = $digits;
-                    $personsInGroup =[];
-                }
-                if ($month1 == $month2)
-                {
-                   //check day now
-                    if ($day1 < $day2) 
-                    {
-                        continue;
-                    }
-                    if ($day1 > $day2)
-                    {
-                        $currentHighest = $digits;
-                        $personsInGroup =[];
-                    }
-                }
-            }
-            //we have skipped if the date was lower or equal to the newest date.
-            
-            
+        $url = "TransaviaCopy.csv";
+    $transaviaArray = [];
+    $found =false ;
+    $personsInGroup =[];
+    $currentHighest = 11011200;//make it a date lower than the lowest in the set
+    
         
-            //we found our flight
-            //print_r($data[0].";".$data[1].$data[2].";".$data[3].$data[4]);
-            $found = true;
-            if(array_key_exists($data[0],$personsInGroup))
+    
+        if (($handle = fopen($url, "r")) !== FALSE) { //open the csv file
+            while (($data = fgetcsv($handle, 0, ",")) !== FALSE)    //go through the lines of the csv file
             {
-            $personsInGroup[$data[0]] = $personsInGroup[$data[0]]+1;
-            }
-            else
-            {
-                $personsInGroup[$data[0]] = 1;
-            }
-            
+                if (($data[1].$data[2] == $flightNumber)) //if the flightnumber is equal to the flight number provided
+                {
+
+                    if ($this->highestDate($currentHighest,$data[3]) == $data[3] && $currentHighest != $data[3])//data[3] is higher than the currenthighest
+                    {
+                        $personsInGroup = [];
+                    }
+                    else if ($currentHighest != $data[3]) //then it was lower, so we do not add it
+                    {
+                     continue;   
+                    }
+                    //we have skipped if the date was lower as the newest date.
+                    $currentHighest = $data[3];
+
+                    //we found our flight
+                    //print_r($data[0].";".$data[1].$data[2].";".$data[3].$data[4]);
+
+                    if(array_key_exists($data[0],$personsInGroup))
+                    {
+                    $personsInGroup[$data[0]] = $personsInGroup[$data[0]]+1;
+                    }
+                    else
+                    {
+                        $personsInGroup[$data[0]] = 1;
+                    }
+
+                }
+
+            }//end of while loop
+            print_r($personsInGroup);
+            fclose($handle);
         }
-        $row++;
     }
-    print_r($personsInGroup);
-    fclose($handle);
-}
+    //Returns the highestDate of the two. If they are equal return the first.
+    function highestDate($date1,$date2)
+    {
+                $year1 = substr($date1, -4);
+                $month1 = substr(substr($date1, -6),0,2);
+                $day1 = substr($date1,0,strlen($date1)-6);
 
+                $year2 = substr($date2, -4);
+                $month2 = substr(substr($date2, -6),0,2);
+                $day2 = substr($date2,0,strlen($date2)-6);
 
+                //check if the date is more recent than the one we had in storage, if it is we continue
+                if ($year1 < $year2) 
+                {
+                    return($date2);
+                }
+                if ($year1 > $year2)
+                {           
+                    return($date1);
+                }
+                if ($year1 == $year2)
+                {
+                    //check month now
+                    if ($month1 < $month2) 
+                    {
+                        return($date2);
+                    }
+                    if ($month1 > $month2)
+                    {
+                        return($date1);  
+                    }
+                    if ($month1 == $month2)
+                    {
+                       //check day now
+                        if ($day1 < $day2) 
+                        {
+                            return($date2);
+                        }
+                        if ($day1 > $day2)
+                        {
+                            return($date1);
+                        }
+                    }
+                }
+        //equally high, so we return the first
 
+       return($date1);
+    }
 
+    }
 ?> 
