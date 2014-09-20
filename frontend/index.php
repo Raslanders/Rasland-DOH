@@ -15,7 +15,7 @@
 		<?php $loc = 0; include("header.php"); ?>
 
 		<div class="row">
-			<div class="small-8 column small-centered">
+			<div class="large-8 small-12 columns small-centered">
 				<p>Hey there! Thanks for using Flock, we will make your flight more interesting and allow you to meet new people. </p>
 
 				<p>Starting off, we need to know your flight number. Please fill it in below.</p>
@@ -31,9 +31,13 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="small-8 column small-centered">
-				<a href="#" class="button radius cancel left">Decline</a>
-				<a href="#" onclick="API.confirmFlightNumber();" class="button radius confirm right">Confirm</a>
+			<div class="large-8 small-12 columns small-centered">
+				<div class="large-6 small-6 columns left">
+					<a href="#" class="button radius cancel left">I don't want to flock</a>
+				</div>
+				<div class="large-6 small-6 columns right">
+					<a href="#" onclick="API.confirmFlightNumber();" class="button radius confirm right">Continue</a>
+				</div>
 			</div>
 		</div>
 	</body>
