@@ -2,6 +2,7 @@
 require_once('Register.php');
 require_once('Checkin.php');
 require_once('Schiphol.php');
+require_once('MatchChecker.php');
 $request = json_decode(html_entity_decode($_POST['request']), true);
 $response = -1;
 if(isset($request['action'])) {
@@ -9,8 +10,7 @@ if(isset($request['action'])) {
     if($action === 'register') {
         $registerObject = new Register($request);
         $response = $registerObject->process();
-    }
-    if($action === 'validateFlight') {
+    } else if($action === 'validateFlight') {
         if(isset($request['flightNumber']) && !empty($request['flightNumber'])) {
             $schipholObject = new Schiphol($request['flightNumber']);
             $response = $schipholObject->validate();
@@ -20,10 +20,13 @@ if(isset($request['action'])) {
                               'message' => 'Flightnumber is wrong');
         }
         
-    }
-    if($action === 'checkin') {
+    } else if($action === 'checkin') {
         $requestObject = new Checkin($request);
         $response = $requestObject->process();
+    }
+    else if($action === 'isMatched') {
+        $matchChecker = new MatchChecker($request);
+        $response = $matchChecker->check();
     }
 }
 if($response != -1) {
