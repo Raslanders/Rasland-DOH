@@ -3,8 +3,8 @@
 
 require( '../hue.php' );
 
-$bridge = '192.168.0.162';
-$key = "replace_this_with_a_real_key";
+$bridge = '10.0.1.2';
+$key = "newdeveloper";
 $hue = new Hue( $bridge, $key );
 $lightRange = [ 1, 3 ];
 
