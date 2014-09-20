@@ -1,6 +1,6 @@
 <?php
 Class Checkin {
-    private $request
+    private $requestl;
     function __construct($request) {
         $this->request = $request;
     }

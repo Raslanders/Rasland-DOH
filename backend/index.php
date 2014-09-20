@@ -1,5 +1,6 @@
 <?php
-
+require_once('Register.php');
+require_once('Checkin.php');
 $request = json_decode(html_entity_decode($_POST['request']), true);
 $response = -1;
 if(isset($request['action'])) {

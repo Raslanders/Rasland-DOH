@@ -13,15 +13,14 @@ Class Register {
         $database = new database();
         if(isset($this->request['flightNumber']) && isset($this->request['goal'])) {
             $uniqueId = uniqid();
-            print($uniqueId);
             //Arguments are correct
-            $values = array($uniqueId, $this->request['goal'], $this->request['flightnumber']);
+            $values = array($uniqueId, $this->request['goal'], $this->request['flightNumber']);
             $database->nquery("INSERT INTO persons (id, Goal, Flightnumber) VALUES (?, ?, ?)", $values);
             
             //Get flight information
-            $flightObject = new Flight($this->request['flightnumber']);
+            $flightObject = new Flight($this->request['flightNumber']);
             $returnStatus = $flightObject->checkFlight();
-            if($returnStatus['statuscode']== 200) {
+            if($returnStatus['statusCode']== 200) {
                 $returnStatus['id'] = $uniqueId;
             }
             return $returnStatus;
