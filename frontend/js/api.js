@@ -18,8 +18,8 @@ var API = {
           data: {
            	request: {
               action: 'register',
-           	flightNumber: number, // HV611
-           	goal: goal
+           	  flightNumber: number, // HV611
+           	  goal: goal
            }  
           }
        });
