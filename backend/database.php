@@ -5,7 +5,7 @@ class Database {
     private $dbn;
 
     //public function __construct($database="prod1", $username = "root", $password = "root", $location = "127.0.0.1") {
-    public function __construct($database="solow", $username = "root", $password = "", $location = "127.0.0.1") {
+    public function __construct($database="flock", $username = "root", $password = "", $location = "127.0.0.1") {
     //public function __construct($database="sepoauth", $username = "root", $password = "", $location = "127.0.0.1") {
     //public function __construct($database = "tagitdatabase", $username = "root", $password = "root", $location = "127.0.0.1") {
         $type = "mysql";
