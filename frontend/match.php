@@ -21,12 +21,14 @@
 		<!-- End Match -->
 		<!-- Start Pillar -->
 		<div class="row">
-		    <div class="large-6 small-8 columns small-centered left">
-		    	<p>We have found your match!
-		    	To meet your match, walk to pillar</p>
-		    </div>
-		    <div class="large-2 small-4 columns small-centered right center">
-		    	<h1>A</h1> 
+			<div class="large-8 small-12 columns small-centered">
+			    <div class="large-8 small-8 columns small-centered left">
+			    	<p>We have found your match!
+			    	To meet your match, walk to pillar</p>
+			    </div>
+			    <div class="large-2 small-4 columns small-centered right center">
+			    	<h1>A</h1> 
+				</div>
 			</div>
 		</div>
 		<!-- End Pillar -->
@@ -39,12 +41,14 @@
 		<!-- End color info -->
 		<!-- Start ID -->
 		<div class="row">
-		    <div class="large-4 small-8 columns small-centered left">
-		    	<p>You will share the following ID:</p>
-		    </div>
-		    <div class="large-2 small-4 columns small-centered right center">
-		    	<h1>XXX</h1>        
-		    </div>
+			<div class="large-8 small-12 columns small-centered">
+			    <div class="large-8 small-8 columns small-centered left">
+			    	<p>You will share the following ID:</p>
+			    </div>
+			    <div class="large-2 small-4 columns small-centered right center">
+			    	<h1>XXX</h1>        
+			    </div>
+			</div>
 		</div>    
 		<!-- End ID -->      
 		<!-- Start buttons -->   
