@@ -11,9 +11,13 @@ if(isset($request['action'])) {
         $response = $registerObject->process();
     }
     if($action === 'validateFlight') {
-        if(isset($request['flightNumber'])) {
+        if(isset($request['flightNumber']) && !empty($request['flightNumber'])) {
             $schipholObject = new Schiphol($request['flightNumber']);
             $response = $schipholObject->validate();
+        }
+        else {
+            $response = array('statusCode' => '400',
+                              'message' => 'Flightnumber is wrong');
         }
         
     }
