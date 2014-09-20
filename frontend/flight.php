@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<!-- Title and meta tags -->
+		<title>Flock | Rasland.nl</title>
+
+		<!-- External css -->
+    	<link rel="stylesheet" href="plugins/foundation-5.4.0/css/foundation.css" />
+    	<link href="http://fonts.googleapis.com/css?family=Arvo%7CRoboto:400,300,700" rel="stylesheet" type="text/css">
+
+		<!-- Internal css -->
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+	</head>
+	<body>		
+		<?php $loc = 4; include("header.php"); ?>
+		<div class="row">
+		    <div class="small-8 column small-centered">
+		    	<div class="row margin-bottom">
+		    		Your flight:
+		    		-number-
+		    		To kutstad, Taiwan. 
+		    	</div>
+		    	<div class="row margin-bottom">		
+		    		<div class="small-12 column small-centered">
+						Departure from gate
+						<h2>5</h2>
+						At 15:06
+					</div>
+		    	</div>		    	
+		    </div>
+		</div>
+		<div class="row margin-bottom">
+		    <div class="small-12 column small-centered"> 
+				<!-- Google Map -->
+	    		<div name="map" id="google-map" style="height: 400px"></div>
+    		</div>
+		</div>
+	</body>
+	<!-- External javascript -->
+	<script src="plugins/jquery-2.1.1.js"></script>
+    <script src="plugins/foundation-5.4.0/js/foundation.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+	<!-- Internal javascript -->
+	<script src="js/maps.js"></script>
+	<script src="js/api.js"></script>
+</html>

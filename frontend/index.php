@@ -18,12 +18,12 @@
 			<div class="small-8 column small-centered">
 				<p>Hey there! Thanks for using Flock, we will make your flight more interesting and allow you to meet new people. </p>
 
-				<p>Starting off, we have to make sure the flight number we received is the right one. Please verify that this is correct:</p>
+				<p>Starting off, we need to know your flight number. Please fill it in below.</p>
 				<form>
 					<div class="row">
 					    <div class="large-12 columns">
 					      	<label>
-					        	<input type="text" placeholder="Enter your flight number here" />
+					        	<input type="text" id="flightNumber" placeholder="Enter your flight number here" />
 					      	</label>
 					    </div>
 					</div>
@@ -33,7 +33,7 @@
 		<div class="row">
 			<div class="small-8 column small-centered">
 				<a href="#" class="button radius cancel left">Decline</a>
-				<a href="interest.php" class="button radius confirm right">Confirm</a>
+				<a href="#" onclick="API.confirmFlightNumber();" class="button radius confirm right">Confirm</a>
 			</div>
 		</div>
 	</body>
