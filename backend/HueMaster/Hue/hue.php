@@ -272,55 +272,39 @@ class Hue
 		switch ( $colorname )
 		{
 			case "green":
-				$command['hue'] = 182 * 140;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 150;
 				break;
 
 			case "red":
-				$command['hue'] = 0;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 0;
 				break;
 
 			case "blue":
 				$command['hue'] = 182 * 250;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
 				break;
 
 			case "coolwhite":
-				$command['ct']	= 150;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 200;
 				break;
 
 			case "warmwhite":
-				$command['ct']	= 500;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 400;
 				break;
 
 			case "orange":
-				$command['hue'] = 182 * 25;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 50;
 				break;
 
 			case "yellow":
-				$command['hue'] = 182 * 85;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 100;
 				break;
 
 			case "pink":
-				$command['hue'] = 182 * 300;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 350;
 				break;
 
 			case "purple":
-				$command['hue'] = 182 * 270;
-				$command['sat'] = 254;
-				$command['bri'] = 254;
+				$command['hue'] = 182 * 300;
 				break;
 		}
 

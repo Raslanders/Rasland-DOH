@@ -1,5 +1,5 @@
 <?php
 require_once('transaviatest.php');
 $object = new transaviatest();
-$object->getPersonsInGroup("HV6583");
+print_r($object->getPersonsInGroup("HV6061"));
 ?>
