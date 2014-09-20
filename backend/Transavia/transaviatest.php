@@ -44,9 +44,9 @@ Class Transaviatest {
                 }
 
             }//end of while loop
-            print_r($personsInGroup);
             fclose($handle);
         }
+        return($personsInGroup);
     }
     //Returns the highestDate of the two. If they are equal return the first.
     function highestDate($date1,$date2)
