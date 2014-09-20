@@ -2,7 +2,7 @@
 
 $request = json_decode(html_entity_decode($_POST['request']), true);
 $response = -1;
-if(isset($request['action']))) {
+if(isset($request['action'])) {
     $action = $request['action'];
     if($action === 'register') {
         $registerObject = new Register($request);

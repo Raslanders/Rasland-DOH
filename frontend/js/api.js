@@ -12,7 +12,7 @@ var API = {
                }
            },
            error: function(msg) {
-              console.log("errooooor " + msg);
+              console.log(msg);
            },
            data: {
            		action: 'register',
