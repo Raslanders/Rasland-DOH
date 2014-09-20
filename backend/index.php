@@ -13,6 +13,7 @@ if(isset($request['action']))) {
         $requestObject->process();
     }
 }
+$matchingObject = new Matcher();
 
 /**if(isset($request['action']) && isset($request['object']) && isset($request['id'])){
 	$obj = $request['object'];
