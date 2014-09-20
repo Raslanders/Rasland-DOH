@@ -13,13 +13,13 @@
 	<body>
 		<?php $loc = 2; include("header.php"); ?>
 		<div class="row">
-			<div class="small-8 column small-centered">
+			<div class="large-8 small-12 column small-centered">
 				<p>Welcome back, if you have arrived at Schiphol Airport, please let us know by pressing the button below! </p>
-				
+				   
 			</div>
 		</div>
 		<div class="row">
-			<div class="small-8 column small-centered">
+			<div class="large-8 small-12 column small-centered">
 				<a href="#" class="button large radius success width-100">Check in!</a>
 			</div>
 		</div>

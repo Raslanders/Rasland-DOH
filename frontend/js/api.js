@@ -12,7 +12,8 @@ var API = {
           contentType: "application/x-www-form-urlencoded",
           success: function (msg) {
             if (msg) {
-              console.log(msg);
+              console.log("Registration succesfull!");
+              window.location.replace("interest.php");
             } else {
             	console.log("Fail on register");
             }
@@ -39,14 +40,14 @@ var API = {
           success: function (msg) {
             if (msg) {
               API.saveFlightNumber();
-              console.log("Sucess in validation!");
+              console.log("Validation succesfull!");
               window.location.replace("interest.php");
             } else {
               console.log("Fail on validation of flight");
             }
           },
           error: function(msg) {
-            // Invalid flight number
+            // IHV1261nvalid flight number
             console.log("Validation failed");
             document.getElementById("flightNumber").className += " error";
           },
@@ -57,6 +58,11 @@ var API = {
               flightNumber: document.getElementById("flightNumber").value,
             })) 
     });
+  },
+
+  confirmRegistration: function() {
+    API.saveData(API.d.goal, 0);
+    API.register();
   },
 
   confirmFlightNumber: function() {
@@ -71,4 +77,12 @@ var API = {
     obj = value;
     localStorage.setItem("flockData", API.d);      
   },
+
+  loadData: function() {
+    console.log("Loading data..");
+    API.d = localStorage.getItem("flockData");    
+    console.log(API.d);
+  },
 }
+
+API.loadData();

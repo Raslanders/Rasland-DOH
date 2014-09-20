@@ -44,6 +44,7 @@
  /* FOUNDATION OVERWRITE */
 .row {  
 	width: 100%;
+	padding: 0 5px;
 }
 
 .margin-bottom {	
@@ -130,4 +131,42 @@ header img {
 
 .error {
 	border: 1px solid red !important;
+}
+
+.checkin-row {
+	padding-bottom: 30%;
+}
+
+.center {
+	text-align: center;
+}
+
+.highlight {
+	border: 1px solid black;
+	padding: 1%;
+}
+
+.highlight-yellow {
+	background-color: yellow;
+	color: black;
+}
+
+.highlight-red {
+	background-color: red;
+	color: white;
+}
+
+.highlight-green {
+	background-color: green;
+	color: white;
+}
+
+.highlight-blue {
+	background-color: blue;
+	color: white;
+}
+
+.highlight-orange {
+	background-color: orange;
+	color: white;
 }

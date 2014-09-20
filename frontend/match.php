@@ -12,25 +12,60 @@
 	</head>
 	<body>		
 		<?php $loc = 3; include("header.php"); ?>
+		<!-- Start Match -->
 		<div class="row">
-		    <div class="small-8 column small-centered">
-		    	<div class="row margin-bottom">
-		    		Hey! We found someone that shares the same interests at you on the same flight! You can meet him or her at:
-		    	</div>
-		    	<div class="row margin-bottom">		
-		    		<div class="small-12 column small-centered">
-						<a href="#map" class="button large radius width-100" style="background-color: #FF0000">Meeting point A, number 12</a>
-						Please stand in your designated area indicated with the <span style="color: red">red</span> lights at meeting point A.
-					</div>
-		    	</div>		    	
-		    </div>
+		    <div class="large-12 small-12 columns center">
+				<h1>Match found</h1>
+			</div>
 		</div>
+		<!-- End Match -->
+		<!-- Start Pillar -->
+		<div class="row">
+		    <div class="large-6 small-8 columns small-centered left">
+		    	<p>We have found your match!
+		    	To meet your match, walk to pillar</p>
+		    </div>
+		    <div class="large-2 small-4 columns small-centered right center">
+		    	<h1>A</h1> 
+			</div>
+		</div>
+		<!-- End Pillar -->
+		<!-- Start color info -->
 		<div class="row margin-bottom">
-		    <div class="small-12 column small-centered"> 
-				<!-- Google Map -->
+		    <div class="large-8 small-12 columns small-centered highlight">
+		    	At that pillar, go to the light with the color of this background. Your match will also be there.
+		    </div>
+		</div> 
+		<!-- End color info -->
+		<!-- Start ID -->
+		<div class="row">
+		    <div class="large-4 small-8 columns small-centered left">
+		    	<p>You will share the following ID:</p>
+		    </div>
+		    <div class="large-2 small-4 columns small-centered right center">
+		    	<h1>XXX</h1>        
+		    </div>
+		</div>    
+		<!-- End ID -->      
+		<!-- Start buttons -->   
+		<div class="row">
+			<div class="large-8 small-12 columns small-centered">
+				<div class="large-6 small-6 columns left">
+					<a href="#" class="button radius cancel left">I can't find my match :(</a>
+				</div>
+				<div class="large-6 small-6 columns right">
+					<a href="#"class="button radius confirm right">Found my match!</a>
+				</div>
+			</div>
+		</div>
+		<!-- End buttons -->
+		<!-- Start Google Map -->	
+		<div class="row margin-bottom">
+		    <div class="large-8 small-12 columns small-centered"> 
 	    		<div name="map" id="google-map" style="height: 400px"></div>
     		</div>
 		</div>
+		<!-- End Google Map -->	
 	</body>
 	<!-- External javascript -->
 	<script src="plugins/jquery-2.1.1.js"></script>

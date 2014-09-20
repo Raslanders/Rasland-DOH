@@ -13,9 +13,9 @@
 	<body>		
 		<?php $loc = 1; include("header.php"); ?>
 		<div class="row">
-		    <div class="small-8 column small-centered">
+		    <div class="large-8 small-12 columns large-centered">
 		    	<div class="row margin-bottom">
-		    		Great! Now that we know what flight you are on, we have to know what aligns most with your interests.
+		    		Great! Now that we know what flight you are on, we need you to select your category so we can match you with someone in the same group.
 		    	</div>
 		    	<div class="row">		
 		    		<div class="small-1 column">    		
@@ -30,10 +30,10 @@
 		    	</div>
 
 		    	<div class="row">		
-		    		<div class="small-1 column">    		
+		    		<div class="small-1 columns">    		
 			      		<input type="radio" name="interest" value="business" id="business">
 			      	</div>
-		    		<div class="small-11 column"> 
+		    		<div class="small-11 columns"> 
 		    			<div for="business">
 		    				Business
 		    				<p>You are on a business trip and are interested in meeting up with other people with the same goal.</p>
@@ -43,8 +43,8 @@
 		    </div>
 		</div>
 		<div class="row">
-			<div class="small-10 column">
-				<a href="#" class="button tiny radius success right">Confirm</a>
+			<div class="large-10 large-centered small-12 columns">
+				<a href="#" onclick="API.confirmRegistration()" class="button large radius success width-100">Confirm</a>
 			</div>
 		</div>
 	</body>
