@@ -1,5 +1,6 @@
 <?php
-
+require_once('Database/database.php');
+require_once('Schiphol.php');
 Class Flight {
     
     private $flightnumber;
@@ -10,23 +11,25 @@ Class Flight {
     
     public function checkFlight() {   
     
-        $database = new Database()->getDBN();
-        $values
-        $result = $this->db->query("SELECT * FROM flights WHERE FlightNumber = ?", $values);
+        $database = new Database();
+        $values = array($this->flightnumber);
+        $result = $database->query("SELECT * FROM flights WHERE FlightNumber = ?", $values, PDO::FETCH_ASSOC);
 
         // Check if instance is already in database
         if (sizeof($result) === 0) {
             //New flight
-            getFlightInformation();
+            return getFlightInformation();
         }
         else {
             //Flight already exist
-            
+            return array('statuscode' => '200',
+                         'message' => 'Flight was already added');
         }
     }
     
     private function getFlightInformation() {
-        
+        $schipholObject = new Schiphol($this->flightnumber);
+        return $schipholObject->getFlightInformation();
     }
 }
 
