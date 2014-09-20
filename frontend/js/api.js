@@ -80,8 +80,10 @@ var API = {
 
   loadData: function() {
     console.log("Loading data..");
-    API.d = localStorage.getItem("flockData");    
-    console.log(API.d);
+    if (localStorage.getItem("flockData")) {
+      API.d = localStorage.getItem("flockData"); 
+      console.log(API.d);
+    }   
   },
 }
 
