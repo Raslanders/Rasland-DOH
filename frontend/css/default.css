@@ -67,9 +67,6 @@ h2 {
 .button.cancel {
 	background-color: #555;
 }
-.button.checkin {
-	width: 100%;
-}
 
 /*	________________________
    |		COLORS			|
@@ -121,4 +118,12 @@ header img {
 
 .progress-dot.active {
 	background-image: url('../img/progress-active.png');
+}
+
+/*	________________________
+   |	 	MATCH	     	|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+.width-100 {
+	width: 100%;
 }

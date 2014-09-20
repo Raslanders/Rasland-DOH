@@ -11,9 +11,12 @@ var API = {
                		console.log("fail");
                }
            },
+           error: function(msg) {
+              console.log("errooooor " + msg);
+           },
            data: {
            		action: 'register',
-           		flightNumber: number,
+           		flightNumber: number, // HV611
            		goal: goal
            }
        });
