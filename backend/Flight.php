@@ -22,7 +22,7 @@ Class Flight {
         }
         else {
             //Flight already exist
-            return array('statuscode' => '200',
+            return array('statusCode' => '200',
                          'message' => 'Flight was already added');
         }
     }
