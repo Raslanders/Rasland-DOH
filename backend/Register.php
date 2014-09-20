@@ -11,7 +11,7 @@ Class Register {
     public function process() {
         //Put the new user in the database
         $database = new database();
-        if(isset($this->request['flightnumber']) && isset($this->request['goal'])) {
+        if(isset($this->request['flightNumber']) && isset($this->request['goal'])) {
             $uniqueId = uniqid();
             print($uniqueId);
             //Arguments are correct
