@@ -24,11 +24,13 @@ Class Register {
             if($returnStatus['statuscode']== 200) {
                 $returnStatus['id'] = $uniqueId;
             }
+            return $returnStatus;
         }
         else {
             //Arguments are incorrect
-        }
             return(array('statusCode' => '400', 'message' => 'Arguments are invalid'));
+        }
+            
     }
 }
     
