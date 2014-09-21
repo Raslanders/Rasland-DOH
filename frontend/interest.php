@@ -17,38 +17,39 @@
 		    	<div class="row margin-bottom">
 		    		Great! Now that we know what flight you are on, we need you to select your category so we can match you with someone in the same group.
 		    	</div>
-		    	<div class="row">		
+		    	<div class="row margin-bottom">		
 		    		<div class="small-2 column">    		
 			      		<input type="radio" name="interest" value="0" id="backpack">
 			      		<label for="backpack"></label>
 			      	</div>
 		    		<div class="small-10 column"> 
 		    			<div>
+		    				a <br />
 		    				<h3>Backpacker</h3>
 		    			</div>
 		    		</div>
 		    	</div>
 
-		    	<div class="row">		
+		    	<div class="row margin-bottom">		
 		    		<div class="small-2 columns">    		
 			      		<input type="radio" name="interest" value="1" id="business">
 			      		<label for="business"></label>
 			      	</div>
 		    		<div class="small-10 columns"> 
-		    			<div>
+		    			<div>a <br />
 		    				<h3>Business</h3>
 		    			</div>
 		    		</div>
 		    	</div>
 
-		    	<div class="row">		
+		    	<div class="row margin-bottom">		
 		    		<div class="small-2 columns">    		
 			      		<input type="radio" name="interest" value="2" id="family">
 			      		<label for="family"></label>
 			      	</div>
 		    		<div class="small-10 columns"> 
-		    			<div>
-		    				<h3>Family travel</h3>
+		    			<div>Traveling with <br />
+		    				<h3>Family</h3>
 		    			</div>
 		    		</div>
 		    	</div>
@@ -56,7 +57,7 @@
 		</div>
 		<div class="row">
 			<div class="large-10 large-centered small-12 columns">
-				<a href="#" onclick="API.confirmRegistration()" class="button large radius success width-100">Confirm</a>
+				<a href="#" onclick="API.confirmRegistration()" class="button large radius confirm width-100">Confirm</a>
 			</div>
 		</div>
 	</body>
