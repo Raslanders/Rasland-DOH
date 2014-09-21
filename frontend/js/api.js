@@ -2,7 +2,7 @@ var API = {
   d: {
     flightNumber: null,
     goal: null,
-    uid: null,
+    id: null,
   },
 
 	register: function() {
@@ -14,7 +14,8 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Registration succesfull!");
-              API.saveData(API.d.uid, msg.uid); // TODO - zoiets? 
+              console.log(msg);
+              API.saveData("id", msg.id); // TODO - zoiets? 
               window.location.replace("checkin.php");
             } else {
             	console.log("Fail on register");
@@ -84,7 +85,7 @@ var API = {
             "request=" + escape(JSON.stringify(
             {
               action: 'checkIn',
-              uid: API.d.uid,
+              uid: API.d.id,
             })) 
     });
   },
