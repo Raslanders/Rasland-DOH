@@ -41,7 +41,6 @@ geocoder.geocode({ 'address': address }, function (results, status) {
     };
 
     map = new google.maps.Map(document.getElementById('google-map'), myOptions);
-    console.log(lat);
     addMeetingPoint(lat,long);
   }
 
