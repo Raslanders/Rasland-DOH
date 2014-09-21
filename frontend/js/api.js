@@ -50,9 +50,7 @@ var API = {
             }
           },
           error: function(msg) {
-            // IHV1261nvalid flight number
             console.log("Validation failed");
-            document.getElementById("flightNumber").className += " error";
           },
           data: 
             "request=" + escape(JSON.stringify(
@@ -72,7 +70,7 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Check in succesfull!");
-              window.location.replace("match.php");
+              window.location.replace("waitmatch.php");
             } else {
               console.log("Fail on check in");
             }
@@ -85,6 +83,32 @@ var API = {
             "request=" + escape(JSON.stringify(
             {
               action: 'checkIn',
+              id: API.d.id,
+            })) 
+    });
+  },
+
+  isMatched: function() {
+    $.ajax({
+          type: "POST",
+          url: "../backend/index.php",
+          dataType: "json",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (msg) {
+            if (msg) {
+                console.log("We got matched!");
+                window.location.replace("match.php");
+            } else {
+                console.log("We are not matched yet!");
+            }
+          },
+          error: function(msg) {
+            console.log("Check in failed");
+          },
+          data: 
+            "request=" + escape(JSON.stringify(
+            {
+              action: 'isMatched',
               id: API.d.id,
             })) 
     });
