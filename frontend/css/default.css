@@ -57,6 +57,9 @@ h1, h2, h3 {
 	margin-bottom: 40px !important;
 }
 
+.padding-top {	
+	padding-top: 40px !important;
+}
 
 html, body{
 	margin: 0;
@@ -125,6 +128,28 @@ header img {
 .progress-dot.active {
 	background-image: url('../img/progress-active.png');
 }
+
+header.grey {
+	background-color: white;
+}
+
+.progress-line-grey {
+	border-bottom: 5px solid grey;
+}
+
+.progress-dot-grey {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	margin: -17px auto 0 auto;
+	background-image: url('../img/progress-grey.png'); 
+	background-size: 30px 30px;
+}
+
+.progress-dot-grey.active {
+	background-image: url('../img/progress-active-grey.png');
+}
+
 /*	________________________
    |		INTEREST	   	|
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
@@ -170,35 +195,19 @@ input[type=radio]:checked + label {
 	text-align: center;
 }
 
-.highlight {
-	padding: 2%;
-}
-
-.highlight-yellow {
-	background-color: yellow;
-	color: black;
-}
-
-.highlight-red {
-	background-color: red;
-	color: white;
-}
-
-.highlight-green {
+.match-wrapper {
 	background-color: green;
 	color: white;
 }
 
-.highlight-blue {
-	background-color: blue;
+.match-wrapper h1, h2, h3{
 	color: white;
 }
 
-.highlight-orange {
-	background-color: orange;
-	color: white;
+#btn-nomatch {
+	background-color: white;
+	color: green;
 }
-
 
 /**
 Spinner! http://tobiasahlin.com/spinkit/
