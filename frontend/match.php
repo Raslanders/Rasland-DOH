@@ -91,5 +91,6 @@
     	addMeetingPoint(52.3111192,4.7621613);
 		document.getElementById('poleName').innerHTML = API.d.poleName;
 		document.getElementById('matchNumber').innerHTML = API.d.matchNumber;
+		API.setColor();
     </script>
 </html>

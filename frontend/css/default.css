@@ -196,7 +196,7 @@ input[type=radio]:checked + label {
 }
 
 .match-wrapper {
-	background-color: green;
+	background-color: white;
 	color: white;
 }
 
@@ -206,7 +206,7 @@ input[type=radio]:checked + label {
 
 #btn-nomatch {
 	background-color: white;
-	color: green;
+	color: white;
 }
 
 /**
