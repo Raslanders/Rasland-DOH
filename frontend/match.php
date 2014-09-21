@@ -11,7 +11,8 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 	</head>
 	<body>		
-		<?php $loc = 3; include("header.php"); ?>
+		<?php $loc = 3; include("header-2.php"); ?>
+		<div class="match-wrapper padding-top">
 		<!-- Start Match -->
 		<div class="row margin-bottom">
 		    <div class="large-12 small-12 columns">
@@ -34,9 +35,14 @@
 		</div>
 		<!-- End Pillar -->
 		<!-- Start color info -->
-		<div class="row margin-bottom">
-		    <div id="color" class="large-8 small-12 columns small-centered highlight-orange">
-		    	At that pillar, go to the light with the color of this background. Your match will also be there.
+		<div class="row">
+		    <div class="large-8 small-12 columns small-centered">
+		    	<div class="large-8 small-8 columns small-centered left">
+		    	 	<p>At that pillar, go to the light with the color of this background. Your match will also be there.</p>
+		    	</div>
+			    <div class="large-2 small-4 columns small-centered right center">
+			    	
+				</div>
 		    </div>
 		</div> 
 		<!-- End color info -->
@@ -56,7 +62,7 @@
 		<div class="row">
 			<div class="large-8 small-12 columns small-centered">
 				<div class="large-6 small-6 columns left">
-					<a href="nomatch.php" class="button radius cancel left">I can't find my match :(</a>
+					<a href="nomatch.php" id="btn-nomatch" class="button radius cancel left">I can't find my match :(</a>
 				</div>
 				<div class="large-6 small-6 columns right">
 					<a href="flight.php"class="button radius confirm right">Found my match!</a>
@@ -71,6 +77,7 @@
     		</div>
 		</div>
 		<!-- End Google Map -->	
+		</div>
 	</body>
 	<!-- External javascript -->
 	<script src="plugins/jquery-2.1.1.js"></script>
