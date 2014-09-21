@@ -20,6 +20,7 @@
 		    	<div class="row">		
 		    		<div class="small-1 column">    		
 			      		<input type="radio" name="interest" value="backpack" id="backpack">
+			      		<label></label>
 			      	</div>
 		    		<div class="small-11 column"> 
 		    			<div for="backpack">
@@ -31,6 +32,7 @@
 		    	<div class="row">		
 		    		<div class="small-1 columns">    		
 			      		<input type="radio" name="interest" value="business" id="business">
+			      		<label></label>
 			      	</div>
 		    		<div class="small-11 columns"> 
 		    			<div for="business">
@@ -42,6 +44,7 @@
 		    	<div class="row">		
 		    		<div class="small-1 columns">    		
 			      		<input type="radio" name="interest" value="business" id="business">
+			      		<label></label>
 			      	</div>
 		    		<div class="small-11 columns"> 
 		    			<div for="business">

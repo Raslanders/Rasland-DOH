@@ -85,7 +85,7 @@ var API = {
             "request=" + escape(JSON.stringify(
             {
               action: 'checkIn',
-              uid: API.d.id,
+              id: API.d.id,
             })) 
     });
   },
