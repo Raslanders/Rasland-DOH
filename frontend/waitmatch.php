@@ -11,34 +11,19 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 	</head>
 	<body>		
-		<?php $loc = 4; include("header.php"); ?>
-		<div class="row">
-		    <div class="large-8 small-12 column small-centered">		    	
-		    		Your flight
-		    		<h2 id="flight" class="center">HV1261</h2>
-		    		Heading to 
-		    		<h2 id="destination" class="center">London</h2>	    		    	
-		    </div>
-		</div>
-
-		<div class="row margin-bottom">		
-    		<div class="large-8 small-12 column small-centered">
-				Will depart from gate
-				<h2 id="gate" class="center">5</h2>
-				At 
-				<h2 id="time" class="center">15:06</h2>
+		<?php $loc = 3; include("header.php"); ?>
+		<!-- Start Match -->
+		<div class="row margin-bottom">
+		    <div class="large-12 small-12 columns">
+				<h1 class="center">Searching for match...</h1>
 			</div>
-    	</div>	
-
-		<div class="row margin-bottom">
-			<h3 class="flight center">Have a great flight!</h2>
 		</div>
-
-		<div class="row margin-bottom">
-		    <div class="large-8 small-12 column small-centered"> 
-				<!-- Google Map -->
-	    		<div name="map" id="google-map" style="height: 400px"></div>
-    		</div>
+		<!-- End Match -->
+		<!-- Start Pillar -->
+		<div class="row">
+			<div class="large-8 small-12 columns small-centered">
+			    <div class="spinner"></div>
+			</div>
 		</div>
 	</body>
 	<!-- External javascript -->
@@ -49,4 +34,8 @@
 	<!-- Internal javascript -->
 	<script src="js/maps.js"></script>
 	<script src="js/api.js"></script>
+	<script>
+		var iv = setInterval(API.isMatched, 1000);
+	</script>
 </html>
+	

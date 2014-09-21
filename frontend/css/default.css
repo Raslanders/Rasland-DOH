@@ -67,6 +67,10 @@ h2 {
 	font-size: 4em;
 }
 
+.flight {
+	color: #EC2C2C;
+}
+
 .button.confirm {
 	background-color: #AAA;
 	color: black;
@@ -79,10 +83,6 @@ h2 {
    |		COLORS			|
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
 */
-
-p {
-	color: #888;
-}
 
 h1 {
 	color: #444;
@@ -131,21 +131,23 @@ header img {
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
 */
 
+
 input[type=radio] {
     display:none; 
 }
 
 input[type=radio] + label {
     display:inline-block;
-    margin:-2px;
-    padding: 4px 12px;
-    background-color: #e7e7e7;
+    padding: 20px 20px;
     border-color: #ddd;
+    border-radius: 50%;
+    background: transparent url('../img/radio-unchecked.png') left center no-repeat;
+	background-size: 40px 40px;
 }
 
 input[type=radio]:checked + label { 
-	background-image: url('../img/check.png');
-    background-color:#d0d0d0;
+	background: transparent url('../img/radio-checked.png') left center no-repeat;
+	background-size: 40px 40px;
 }
 
 
@@ -196,4 +198,37 @@ input[type=radio]:checked + label {
 .highlight-orange {
 	background-color: orange;
 	color: white;
+}
+
+
+/**
+Spinner! http://tobiasahlin.com/spinkit/
+**/
+.spinner {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+
+  margin: 20px auto;
+  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

@@ -1,6 +1,6 @@
 <?php
-require_once('Register.php');
-$arguments = array('flightnumber' => 'HV611', 'goal' => 1);
-$registerObject = new Register($arguments);
-$registerObject->process();
+require_once('Gweh.php');
+
+$gwehObject = new Gweh(0);
+print_r($gwehObject->calculateRGB());
 ?>
