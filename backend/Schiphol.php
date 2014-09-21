@@ -26,7 +26,9 @@ Class Schiphol {
         else {
             $flights = $json['Flights']['Flight'];
             $database = new Database();
-            $values = array($flights['FlightNumber'], $flights['ScheduleTime'], $flights['Gate']);
+            $time = explode(":",$flights['ScheduleTime']);
+            $time = time[0] . ':' . time[1];
+            $values = array($flights['FlightNumber'], $time, $flights['Gate']);
             $result = $database->nquery("INSERT INTO flights (FlightNumber, DepartureTime, GateNumber) VALUES (?, ?, ?)", $values);
             return array('statusCode' => '200',
                          'message' => 'Flight was added to the database');

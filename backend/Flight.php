@@ -23,7 +23,8 @@ Class Flight {
             //Flight already exist
             return array('statusCode' => '200',
                          'message' => 'Flight was already added',
-                         'gateNumber' => $result[0]['GateNumber']);
+                         'gateNumber' => $result[0]['GateNumber'],
+                         'departureTime' => $result[0]['DepartureTime']);
         }
     }
     
