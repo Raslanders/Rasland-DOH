@@ -91,7 +91,7 @@ var API = {
   },
 
   confirmRegistration: function() {
-    API.saveData("goal", 0);
+    API.saveData("goal", $('input[name="interest"]:checked').val());
     API.register();
   },
 

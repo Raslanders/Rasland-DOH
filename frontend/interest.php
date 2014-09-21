@@ -18,36 +18,36 @@
 		    		Great! Now that we know what flight you are on, we need you to select your category so we can match you with someone in the same group.
 		    	</div>
 		    	<div class="row">		
-		    		<div class="small-1 column">    		
-			      		<input type="radio" name="interest" value="backpack" id="backpack">
-			      		<label></label>
+		    		<div class="small-2 column">    		
+			      		<input type="radio" name="interest" value="0" id="backpack">
+			      		<label for="backpack"></label>
 			      	</div>
-		    		<div class="small-11 column"> 
-		    			<div for="backpack">
+		    		<div class="small-10 column"> 
+		    			<div>
 		    				<h3>Backpacker</h3>
 		    			</div>
 		    		</div>
 		    	</div>
 
 		    	<div class="row">		
-		    		<div class="small-1 columns">    		
-			      		<input type="radio" name="interest" value="business" id="business">
-			      		<label></label>
+		    		<div class="small-2 columns">    		
+			      		<input type="radio" name="interest" value="1" id="business">
+			      		<label for="business"></label>
 			      	</div>
-		    		<div class="small-11 columns"> 
-		    			<div for="business">
+		    		<div class="small-10 columns"> 
+		    			<div>
 		    				<h3>Business</h3>
 		    			</div>
 		    		</div>
 		    	</div>
 
 		    	<div class="row">		
-		    		<div class="small-1 columns">    		
-			      		<input type="radio" name="interest" value="business" id="business">
-			      		<label></label>
+		    		<div class="small-2 columns">    		
+			      		<input type="radio" name="interest" value="2" id="family">
+			      		<label for="family"></label>
 			      	</div>
-		    		<div class="small-11 columns"> 
-		    			<div for="business">
+		    		<div class="small-10 columns"> 
+		    			<div>
 		    				<h3>Family travel</h3>
 		    			</div>
 		    		</div>

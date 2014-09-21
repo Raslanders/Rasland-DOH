@@ -131,21 +131,23 @@ header img {
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
 */
 
+
 input[type=radio] {
     display:none; 
 }
 
 input[type=radio] + label {
     display:inline-block;
-    margin:-2px;
-    padding: 4px 12px;
-    background-color: #e7e7e7;
+    padding: 20px 20px;
     border-color: #ddd;
+    border-radius: 50%;
+    background: transparent url('../img/radio-unchecked.png') left center no-repeat;
+	background-size: 40px 40px;
 }
 
 input[type=radio]:checked + label { 
-	background-image: url('../img/check.png');
-    background-color:#d0d0d0;
+	background: transparent url('../img/radio-checked.png') left center no-repeat;
+	background-size: 40px 40px;
 }
 
 
