@@ -3,8 +3,8 @@
 Class Gweh {
     
     private $gweh;
-    private $saturation = 1;
-    private $brightness = 1;
+    private $saturation = .5;
+    private $brightness = .5;
     
     function __construct($hue) {
         $this->gweh = $hue;

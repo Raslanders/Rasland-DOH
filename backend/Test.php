@@ -1,6 +1,6 @@
 <?php
 require_once('Gweh.php');
 
-$gwehObject = new Gweh((182/360));
+$gwehObject = new Gweh(0);
 print_r($gwehObject->calculateRGB());
 ?>

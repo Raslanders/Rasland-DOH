@@ -22,7 +22,7 @@ Class Checkin {
                 //Person is in database
                 $values = array($this->request['id']);
                 $database->nquery("UPDATE persons SET CheckedIn = 1 WHERE id = ?", $values);
-                return array('statuscode' => '200',
+                return array('statusCode' => '200',
                              'message' => 'Checked in correctly');    
             } 
         }

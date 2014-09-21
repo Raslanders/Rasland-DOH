@@ -3,6 +3,7 @@ require_once('Register.php');
 require_once('Checkin.php');
 require_once('Schiphol.php');
 require_once('MatchChecker.php');
+require_once('MatchRik.php');
 $request = json_decode(html_entity_decode($_POST['request']), true);
 $response = -1;
 $file = 'log.txt';
@@ -39,6 +40,7 @@ if($response != -1) {
     http_response_code($response['statusCode']);
 }
 echo json_encode($response);
-//$matchingObject = new Matcher();
+$matchingObject = new MatchRik();
+$matchingObject->checkForMatches();
 
 ?>
