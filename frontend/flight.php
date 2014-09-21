@@ -16,8 +16,6 @@
 		    <div class="large-8 small-12 column small-centered">		    	
 		    		Your flight
 		    		<h2 id="flight" class="center">HV1261</h2>
-		    		Heading to 
-		    		<h2 id="destination" class="center">London</h2>	    		    	
 		    </div>
 		</div>
 
@@ -48,7 +46,8 @@
 
 	<!-- Internal javascript -->
 	<script src="js/api.js"></script>
-	<script src="js/maps.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/flight.js"></script>
 	
     <script>
     	addMeetingPoint(52.3111192,4.7621613);

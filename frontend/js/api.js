@@ -6,7 +6,8 @@ var API = {
     color: null,
     poleName: null,
     matchNumber: null,
-    gateNumber: null
+    gateNumber: null,
+    departTime: null
   },
 
 	register: function() {
@@ -20,6 +21,7 @@ var API = {
               console.log("Registration succesfull!");
               API.saveData("id", msg.id);
               API.saveData("gateNumber", msg.gateNumber);
+              API.saveData("departTime", msg.departureTime);
               window.location.replace("checkin.php");
             } else {
             	console.log("Fail on register");
