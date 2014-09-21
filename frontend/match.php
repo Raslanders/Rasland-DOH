@@ -28,14 +28,14 @@
 			    	To meet your match, walk to pillar</p>
 			    </div>
 			    <div class="large-2 small-4 columns small-centered right center">
-			    	<h1>A</h1> 
+			    	<h1 id="poleName">A</h1> 
 				</div>
 			</div>
 		</div>
 		<!-- End Pillar -->
 		<!-- Start color info -->
 		<div class="row margin-bottom">
-		    <div class="large-8 small-12 columns small-centered highlight-orange">
+		    <div id="color" class="large-8 small-12 columns small-centered highlight-orange">
 		    	At that pillar, go to the light with the color of this background. Your match will also be there.
 		    </div>
 		</div> 
@@ -47,7 +47,7 @@
 			    	<p>You will share the following ID:</p>
 			    </div>
 			    <div class="large-2 small-4 columns small-centered right center">
-			    	<h1>XXX</h1>        
+			    	<h1 id="matchNumber">XXX</h1>        
 			    </div>
 			</div>
 		</div>    
@@ -76,8 +76,8 @@
 	<script src="plugins/jquery-2.1.1.js"></script>
     <script src="plugins/foundation-5.4.0/js/foundation.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
+    
 	<!-- Internal javascript -->
-	<script src="js/maps.js"></script>
-	<script src="js/api.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/maps.js"></script>
 </html>

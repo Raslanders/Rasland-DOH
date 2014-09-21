@@ -21,7 +21,7 @@ Class MatchRik {
                         if($persons[$i]['Goal'] == $persons[$j]['Goal'] && $persons[$i]['Flightnumber'] == $persons[$j]['Flightnumber']) {
                             array_push($ignoreList, $i);
                             array_push($ignoreList, $j);
-                            $values = array($persons[$i]['id'], $persons[$i]['id'], "#FF0000", "A", 5);
+                            $values = array($persons[$i]['id'], $persons[$j]['id'], "#FF0000", "A", 5);
                             $database->nquery("INSERT INTO matches (uid1, uid2, color, poleName, matchNumber) VALUES (?, ?, ?, ?, ?)", $values);
                         }
                     }

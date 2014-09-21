@@ -35,6 +35,23 @@ if(isset($request['action'])) {
         $matchChecker = new MatchChecker($request);
         $response = $matchChecker->check();
     }
+    else if($action === 'getFlightDetails') {
+        $flightObject = new Flight('x');
+        if(isset($request['id'])) {
+            $response = $flightObject->getDetails($request['id']);
+            $response['statusCode'] = '200';
+            $response['message'] = 'Your flight details have been succesfully found';
+        }
+        else {
+            return array('statusCode' => '400',
+                         'message' => 'You must send an id');
+        }
+        
+    }
+    else {
+        return array('statusCode' => ' 400',
+                     'message' => 'This action is invalid');
+    }
 }
 if($response != -1) {
     http_response_code($response['statusCode']);

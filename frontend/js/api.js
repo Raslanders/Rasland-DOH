@@ -3,6 +3,10 @@ var API = {
     flightNumber: null,
     goal: null,
     id: null,
+    color: null,
+    poleName: null,
+    matchNumber: null,
+    gateNumber: null
   },
 
 	register: function() {
@@ -15,6 +19,7 @@ var API = {
             if (msg) {
               console.log("Registration succesfull!");
               API.saveData("id", msg.id);
+              API.saveData("gateNumber", msg.gateNumber);
               window.location.replace("checkin.php");
             } else {
             	console.log("Fail on register");
@@ -97,6 +102,9 @@ var API = {
             if (msg) {
                 console.log("We got matched!");
                 clearInterval(iv);
+                API.saveData('matchNumber', msg.matchNumber);
+                API.saveData('poleName', msg.poleName);
+                API.saveData('color', msg.color);
                 window.location.replace("match.php");
             } else {
                 console.log("We are not matched yet!");
@@ -123,10 +131,10 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Flight information found!");
-              document.getElementById("flight").innerHTML = msg.flight;
-              document.getElementById("destination").innerHTML = msg.destination;
-              document.getElementById("gate").innerHTML = msg.gate;
-              document.getElementById("time").innerHTML = msg.time;
+              document.getElementById("flight").innerHTML = msg.flightNumber;
+              //document.getElementById("destination").innerHTML = msg.destination; Hebben we niet :( Misschien heeft max het.
+              document.getElementById("gate").innerHTML = msg.gateNumber;
+              document.getElementById("time").innerHTML = msg.depatureTime;
             } else {
               console.log("Could not fetch flight information!");
             }
@@ -143,6 +151,8 @@ var API = {
             })) 
     });
   },
+  
+ 
 
   confirmRegistration: function() {
     API.saveData("goal", $('input[name="interest"]:checked').val());

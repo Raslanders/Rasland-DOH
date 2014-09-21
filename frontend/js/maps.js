@@ -1,8 +1,28 @@
-$(document).ready(function() {
-  var map;
 
+var map;
+var lat; 
+var long;
+document.getElementById('poleName').innerHTML = API.d.poleName;
+    document.getElementById('matchNumber').innerHTML = API.d.matchNumber;
+    $('#color').css("background-color", API.d.color);
+
+$(document).ready(function() {  
   /* Google Map
 	-----------------------------------------------------*/
+var geocoder = new google.maps.Geocoder();
+var address = 'Schiphol gate' + API.d.gateNumber;
+geocoder.geocode({ 'address': address }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+        lat = results[0].geometry.location.lat();
+        long = results[0].geometry.location.lng();
+    } else {
+        console.log("Request failed.")
+    }
+});
+
+  google.maps.event.addDomListener(window, 'load', mapInitialize);
+});
+
 
   function mapInitialize() {
     var yourLatitude = 52.3101192;
@@ -21,8 +41,8 @@ $(document).ready(function() {
     };
 
     map = new google.maps.Map(document.getElementById('google-map'), myOptions);
-  
-    addMeetingPoint(52.3097519,4.7645703);
+    console.log(lat);
+    addMeetingPoint(lat,long);
   }
 
   function addMeetingPoint(lat, long) {    
@@ -37,6 +57,3 @@ $(document).ready(function() {
       //icon: image
     });
   }
-
-  google.maps.event.addDomListener(window, 'load', mapInitialize);
-});

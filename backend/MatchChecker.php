@@ -24,8 +24,9 @@ Class MatchChecker {
         } else {
             //Person is in database, now check if there is a match
             $values = array($this->request['id'], $this->request['id']);
-            $result = $database->query("SELECT * FROM matches WHERE uid1= ? OR uid2 = ?", $values, PDO::FETCH_ASSOC);
+            $result = $database->query("SELECT * FROM matches WHERE uid1= ? OR uid2 = ?", $values, PDO::FETCH_ASSOC);            
             if (sizeof($result) === 1) {
+                $result = $result[0];
                 return array('statusCode' => '200',
                              'message' => 'You are clustered',
                              'color' => $result['color'],
