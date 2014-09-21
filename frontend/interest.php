@@ -5,8 +5,8 @@
 
 		<!-- External css -->
     	<link rel="stylesheet" href="plugins/foundation-5.4.0/css/foundation.css" />
-    	<link href="http://fonts.googleapis.com/css?family=Arvo%7CRoboto:400,300,700" rel="stylesheet" type="text/css">
-
+    	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Roboto' rel='stylesheet' type='text/css'>
+		
 		<!-- Internal css -->
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 	</head>

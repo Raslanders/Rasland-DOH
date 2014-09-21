@@ -2,6 +2,7 @@ var API = {
   d: {
     flightNumber: null,
     goal: null,
+    uid: null,
   },
 
 	register: function() {
@@ -13,7 +14,8 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Registration succesfull!");
-              window.location.replace("interest.php");
+              API.saveData(API.d.uid, msg.uid); // TODO - zoiets? 
+              window.location.replace("checkin.php");
             } else {
             	console.log("Fail on register");
             }
@@ -56,6 +58,33 @@ var API = {
             {
               action: 'validateFlight',
               flightNumber: document.getElementById("flightNumber").value,
+            })) 
+    });
+  },
+
+  checkIn: function() {
+    $.ajax({
+          type: "POST",
+          url: "../backend/index.php",
+          dataType: "json",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (msg) {
+            if (msg) {
+              console.log("Check in succesfull!");
+              window.location.replace("match.php");
+            } else {
+              console.log("Fail on check in");
+            }
+          },
+          error: function(msg) {
+            console.log("Check in failed");
+            document.getElementById("flightNumber").className += " error";
+          },
+          data: 
+            "request=" + escape(JSON.stringify(
+            {
+              action: 'checkIn',
+              uid: API.d.uid,
             })) 
     });
   },

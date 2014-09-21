@@ -5,15 +5,15 @@
 
 		<!-- External css -->
     	<link rel="stylesheet" href="plugins/foundation-5.4.0/css/foundation.css" />
-    	<link href="http://fonts.googleapis.com/css?family=Arvo%7CRoboto:400,300,700" rel="stylesheet" type="text/css">
-
+    	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Roboto' rel='stylesheet' type='text/css'>
+		
 		<!-- Internal css -->
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 	</head>
 	<body>		
 		<?php $loc = 4; include("header.php"); ?>
 		<div class="row">
-		    <div class="small-8 column small-centered">
+		    <div class="large-8 small-12 column small-centered">
 		    	<div class="row margin-bottom">
 		    		Your flight:
 		    		-number-
@@ -29,7 +29,7 @@
 		    </div>
 		</div>
 		<div class="row margin-bottom">
-		    <div class="small-12 column small-centered"> 
+		    <div class="large-8 small-12 column small-centered"> 
 				<!-- Google Map -->
 	    		<div name="map" id="google-map" style="height: 400px"></div>
     		</div>

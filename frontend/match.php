@@ -5,17 +5,18 @@
 
 		<!-- External css -->
     	<link rel="stylesheet" href="plugins/foundation-5.4.0/css/foundation.css" />
-    	<link href="http://fonts.googleapis.com/css?family=Arvo%7CRoboto:400,300,700" rel="stylesheet" type="text/css">
-
+    	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Roboto' rel='stylesheet' type='text/css'>
+		
 		<!-- Internal css -->
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 	</head>
 	<body>		
 		<?php $loc = 3; include("header.php"); ?>
 		<!-- Start Match -->
-		<div class="row">
-		    <div class="large-12 small-12 columns center">
-				<h1>Match found</h1>
+		<div class="row margin-bottom">
+		    <div class="large-12 small-12 columns">
+				<h1 class="center">Match found! 
+		    	<img src="img/bigcheck.png" style="height: 50px" /></h1>
 			</div>
 		</div>
 		<!-- End Match -->
@@ -34,7 +35,7 @@
 		<!-- End Pillar -->
 		<!-- Start color info -->
 		<div class="row margin-bottom">
-		    <div class="large-8 small-12 columns small-centered highlight">
+		    <div class="large-8 small-12 columns small-centered highlight-orange">
 		    	At that pillar, go to the light with the color of this background. Your match will also be there.
 		    </div>
 		</div> 

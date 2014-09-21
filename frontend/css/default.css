@@ -1,29 +1,36 @@
+*{font-family: 'Roboto';}
+
+
 /*	________________________
    |		CLASSES			|
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
 */
 
-.roboto-light-med{
-	font-size:2em;
+h1, h2, h3 {
+	font-family: "Droid Serif";
+}
+
+.roboto-light-med {
+	font-size:3em;
 	text-align: center;
-	color: white;
+	color: black;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }
 
-.roboto-light-small{
+.roboto-light-small {
 	font-size:1.5em;
 	text-align: center;
-	color: white;
+	color: black;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }
-.roboto{
+.roboto {
 	color: white;
 	font-family: 'Roboto', sans-serif;
 }
 
-.arvo{
+.arvo {
 	color: white;
 	text-align: center;
 	font-family: 'Arvo', serif;
@@ -141,8 +148,7 @@ header img {
 }
 
 .highlight {
-	border: 1px solid black;
-	padding: 1%;
+	padding: 2%;
 }
 
 .highlight-yellow {
