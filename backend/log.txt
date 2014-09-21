@@ -1,0 +1,3 @@
+{"action":"validateFlight","flightNumber":"HV1261"}
+{"action":"register","flightNumber":"HV1261","goal":0}
+{"action":"checkIn","id":"541e30b8065d9"}
