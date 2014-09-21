@@ -47,9 +47,5 @@
 	<!-- Internal javascript -->
 	<script src="js/api.js"></script>
     <script src="js/maps.js"></script>
-    <script src="js/flight.js"></script>
-	
-    <script>
-    	addMeetingPoint(52.3111192,4.7621613);
-    </script>
+    <script src="js/flight.js"></script>	
 </html>

@@ -82,5 +82,7 @@
     <script src="js/maps.js"></script>
     <script>
     	addMeetingPoint(52.3111192,4.7621613);
+		document.getElementById('poleName').innerHTML = API.d.poleName;
+		document.getElementById('matchNumber').innerHTML = API.d.matchNumber;
     </script>
 </html>

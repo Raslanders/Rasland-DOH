@@ -1,6 +1,4 @@
 var map;
-document.getElementById('poleName').innerHTML = API.d.poleName;
-document.getElementById('matchNumber').innerHTML = API.d.matchNumber;
 $('#color').css("background-color", API.d.color);
 
 $(document).ready(function() {  
@@ -32,10 +30,10 @@ function mapInitialize() {
 function addGateMarker(id) {  
   var geocoder = new google.maps.Geocoder();
   var address = 'Schiphol gate' + id;
+  console.log(id);
   geocoder.geocode({ 'address': address }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-          lat = results[0].geometry.location.lat();
-          long = results[0].geometry.location.lng();
+          addMeetingPoint(results[0].geometry.location.lat(), results[0].geometry.location.lng());
       } else {
           console.log("Request failed.")
       }
