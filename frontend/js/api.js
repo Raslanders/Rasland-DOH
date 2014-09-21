@@ -184,6 +184,11 @@ var API = {
       console.log(API.d);
     }   
   },
+
+  setColor: function() {
+    $(".match-wrapper").css("background-color",API.d.color);
+    $("#btn-nomatch").css("color",API.d.color);
+  }
 }
 
 API.loadData();
