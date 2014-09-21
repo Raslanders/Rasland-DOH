@@ -1,6 +1,7 @@
 <?php
 require( 'hue/hue.php' );
 
+
 class HueControl
 {
 	private $hue;
@@ -9,8 +10,7 @@ class HueControl
 		$bridge = '10.0.1.2';
 		$key = "newdeveloper";
 		$hue = new Hue( $bridge, $key );
-		$this->hue = $hue;
-	}
+		$this->hue = $hue;	}
 
 	public function reset()
 	{

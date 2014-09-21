@@ -4,7 +4,7 @@ Class Transaviatest {
 
     public function getPersonsInGroup($flightNumber)
     {
-        $url = "TransaviaCopy.csv";
+    $url = "../Transavia/transaviaCopy.csv";
     $transaviaArray = [];
     $found =false ;
     $personsInGroup =[];
