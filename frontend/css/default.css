@@ -67,6 +67,10 @@ h2 {
 	font-size: 4em;
 }
 
+.flight {
+	color: #EC2C2C;
+}
+
 .button.confirm {
 	background-color: #AAA;
 	color: black;
@@ -79,10 +83,6 @@ h2 {
    |		COLORS			|
    \/\/\/\/\/\/\/\/\/\/\/\/\/ 
 */
-
-p {
-	color: #888;
-}
 
 h1 {
 	color: #444;

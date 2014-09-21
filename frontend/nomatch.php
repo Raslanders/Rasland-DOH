@@ -13,6 +13,12 @@
 	<body>		
 		<?php $loc = 4; include("header.php"); ?>
 		<div class="row">
+		    <div class="large-8 small-12 column small-centered">
+		    	<p>It's a shame your match hasn't shown up :(
+		    	However, we have arranged your seating so the people around you are still willing to talk.</p>
+		    </div>
+		</div>
+		<div class="row">
 		    <div class="large-8 small-12 column small-centered">		    	
 		    		Your flight
 		    		<h2 id="flight" class="center">MH17</h2>
@@ -31,9 +37,9 @@
     	</div>	
 
 		<div class="row margin-bottom">
-			<h3 class="flight center">Have a great flight!</h2>
+			<h3 class="flight center">Have a great flight!</h3>
 		</div>
-
+		
 		<div class="row margin-bottom">
 		    <div class="large-8 small-12 column small-centered"> 
 				<!-- Google Map -->
