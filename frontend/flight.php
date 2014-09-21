@@ -47,6 +47,10 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
 	<!-- Internal javascript -->
-	<script src="js/maps.js"></script>
 	<script src="js/api.js"></script>
+	<script src="js/maps.js"></script>
+	
+    <script>
+    	addMeetingPoint(52.3111192,4.7621613);
+    </script>
 </html>

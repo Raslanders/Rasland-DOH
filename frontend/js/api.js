@@ -135,6 +135,8 @@ var API = {
               //document.getElementById("destination").innerHTML = msg.destination; Hebben we niet :( Misschien heeft max het.
               document.getElementById("gate").innerHTML = msg.gateNumber;
               document.getElementById("time").innerHTML = msg.depatureTime;
+            
+              
             } else {
               console.log("Could not fetch flight information!");
             }
