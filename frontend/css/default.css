@@ -200,7 +200,7 @@ input[type=radio]:checked + label {
 	color: white;
 }
 
-.match-wrapper h1, h2, h3{
+.match-wrapper h1, .match-wrapper h2, .match-wrapper h3{
 	color: white;
 }
 
