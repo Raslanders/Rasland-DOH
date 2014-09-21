@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery.js"></script>
+	<title>Flock Hue Visualizer</title>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<style>
+
+	html, body{
+		margin:0;
+	}
+	header{
+		width:100%;
+		height:150px;
+		background-color: #ec2c2c;
+	}
+
+	header img{
+		display: inline-block;
+		height:100px;
+		padding:20px;
+		margin:-35px 350px 0 0;
+		vertical-align: middle;
+	}
+
+	header p{
+		display: inline-block;
+		font-family: 'Lobster';
+		color:white;
+		font-size:3em;
+
+	}
+
+	#anchor{
+		display:block;
+		width:20%;
+		position:relative;
+		margin: 33vh 45vw;
+	}
+
+	.circle {
+		margin: -15vh 0 0 -7.5vw;
+		position: absolute;
+		display: block;
+		border-radius: 50%;
+		width: 400px;
+		height: 400px;
+		background-color: #676767;
+	}
+
+	.square{
+		display: block;
+		position: absolute;
+		width:150px;
+		height:150px;
+		background-color:blue;
+	}
+	</style>
+	<script>
+	
+
+	$(document).ready(function(){
+
+		$.ajax({
+			url: "test.json",
+			dataType: 'json'
+		}).done(function(data) {
+			var items = [];
+			$.each( data, function( key, val ) {
+			  items.push( val );
+			});
+			console.log( items );
+		    maakZonnetje(items);
+		});
+	});
+
+	function maakZonnetje(items){
+		var r = 230;
+		var dinges = (2/9) * Math.PI;
+
+		for(var i=0; i<9; i++){
+			var x = r * Math.cos(i * dinges);
+			var y = r * Math.sin(i * dinges);
+
+			$("#"+i).css({
+				"margin-left":x+"px",
+				"margin-top": y+"px",
+				"background-color": items[i],
+				WebkitTransform: 'rotate(' + i * dinges + 'rad)'
+			});
+			//$("#"+i).css("margin-top","-"+y+"px");
+		}
+	}
+	</script>
+</head>
+<body>
+	<header>
+		<img src="webFlockLogoInverse.png" alt="Flock">
+		<p>Flock Hue Visualizer</p>
+	</header>
+
+	<div id="anchor">
+		
+
+		<div id="0" class="square">
+		</div>
+
+		<div id="1" class="square">
+		</div>
+
+		<div id="2" class="square">
+		</div>
+
+		<div id="3" class="square">
+		</div>
+
+		<div id="4" class="square">
+		</div>
+
+		<div id="5" class="square">
+		</div>
+
+		<div id="6" class="square">
+		</div>
+
+		<div id="7" class="square">
+		</div>
+
+		<div id="8" class="square">
+		</div>
+
+		<div class="circle">
+		</div>
+	</div>
+
+</body>
+</html>

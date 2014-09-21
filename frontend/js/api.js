@@ -14,8 +14,7 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Registration succesfull!");
-              console.log(msg);
-              API.saveData("id", msg.id); // TODO - zoiets? 
+              API.saveData("id", msg.id);
               window.location.replace("checkin.php");
             } else {
             	console.log("Fail on register");
@@ -50,9 +49,7 @@ var API = {
             }
           },
           error: function(msg) {
-            // IHV1261nvalid flight number
             console.log("Validation failed");
-            document.getElementById("flightNumber").className += " error";
           },
           data: 
             "request=" + escape(JSON.stringify(
@@ -72,7 +69,7 @@ var API = {
           success: function (msg) {
             if (msg) {
               console.log("Check in succesfull!");
-              window.location.replace("match.php");
+              window.location.replace("waitmatch.php");
             } else {
               console.log("Fail on check in");
             }
@@ -90,8 +87,65 @@ var API = {
     });
   },
 
+  isMatched: function() {
+    $.ajax({
+          type: "POST",
+          url: "../backend/index.php",
+          dataType: "json",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (msg) {
+            if (msg) {
+                console.log("We got matched!");
+                clearInterval(iv);
+                window.location.replace("match.php");
+            } else {
+                console.log("We are not matched yet!");
+            }
+          },
+          error: function(msg) {
+            console.log("Check in failed");
+          },
+          data: 
+            "request=" + escape(JSON.stringify(
+            {
+              action: 'isMatched',
+              id: API.d.id,
+            })) 
+    });
+  },
+
+  processFlightInfo: function() {
+    $.ajax({
+          type: "POST",
+          url: "../backend/index.php",
+          dataType: "json",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (msg) {
+            if (msg) {
+              console.log("Flight information found!");
+              document.getElementById("flight").innerHTML = msg.flight;
+              document.getElementById("destination").innerHTML = msg.destination;
+              document.getElementById("gate").innerHTML = msg.gate;
+              document.getElementById("time").innerHTML = msg.time;
+            } else {
+              console.log("Could not fetch flight information!");
+            }
+          },
+          error: function(msg) {
+            console.log(msg);
+          },
+          data: 
+            "request=" + escape(JSON.stringify(
+            {
+              action: 'flightInfo',
+              flightNumber: API.d.flightNumber, // HV611
+              goal: API.d.goal
+            })) 
+    });
+  },
+
   confirmRegistration: function() {
-    API.saveData("goal", 0);
+    API.saveData("goal", $('input[name="interest"]:checked').val());
     API.register();
   },
 
