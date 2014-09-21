@@ -1,0 +1,22 @@
+Person
+    -vluchtnummer
+    -doel
+    -uid
+    -incheck (TF)
+    
+Vlucht 
+    -vluchtnummer
+    -vertrektijd
+    -aankomsttijd
+    
+Matches
+    -uid1
+    -uid2
+    -poleName
+    -color
+    -matchNumber
+
+Pole
+    -Name
+    -Lat
+    -Long

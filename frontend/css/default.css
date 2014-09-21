@@ -1,0 +1,234 @@
+*{font-family: 'Roboto';}
+
+
+/*	________________________
+   |		CLASSES			|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+
+h1, h2, h3 {
+	font-family: "Droid Serif";
+}
+
+.roboto-light-med {
+	font-size:3em;
+	text-align: center;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.roboto-light-small {
+	font-size:1.5em;
+	text-align: center;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+.roboto {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.arvo {
+	color: white;
+	text-align: center;
+	font-family: 'Arvo', serif;
+}
+
+.dropshadow{
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+}
+
+/*	________________________
+   |		RESETS 			|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+
+ /* FOUNDATION OVERWRITE */
+.row {  
+	width: 100%;
+	padding: 0 5px;
+}
+
+.margin-bottom {	
+	margin-bottom: 40px !important;
+}
+
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-size: 4em;
+}
+
+.flight {
+	color: #EC2C2C;
+}
+
+.button.confirm {
+	background-color: #AAA;
+	color: black;
+}
+.button.cancel {
+	background-color: #555;
+}
+
+/*	________________________
+   |		COLORS			|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+
+h1 {
+	color: #444;
+}
+
+/*	________________________
+   |	 PROGRESS BAR		|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+header {
+ 	background-color: #EC2C2C;
+ 	margin-bottom: 15px;
+}
+
+header img {
+	margin-bottom: 20px;
+}
+
+.small-2.dot {
+	display: inline-block;
+}
+
+.row.line {
+	margin-top: 35px;
+	padding: 0  10% 0 10%;
+}
+
+.progress-line { 
+	border-bottom: 5px solid white;
+}
+
+.progress-dot {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	margin: -17px auto 0 auto;
+	background-image: url('../img/progress.png'); 
+	background-size: 30px 30px;
+}
+
+.progress-dot.active {
+	background-image: url('../img/progress-active.png');
+}
+/*	________________________
+   |		INTEREST	   	|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+
+
+input[type=radio] {
+    display:none; 
+}
+
+input[type=radio] + label {
+    display:inline-block;
+    padding: 20px 20px;
+    border-color: #ddd;
+    border-radius: 50%;
+    background: transparent url('../img/radio-unchecked.png') left center no-repeat;
+	background-size: 40px 40px;
+}
+
+input[type=radio]:checked + label { 
+	background: transparent url('../img/radio-checked.png') left center no-repeat;
+	background-size: 40px 40px;
+}
+
+
+/*	________________________
+   |	 	MATCH	     	|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+.width-100 {
+	width: 100%;
+}
+
+.error {
+	border: 1px solid red !important;
+}
+
+.checkin-row {
+	padding-bottom: 30%;
+}
+
+.center {
+	text-align: center;
+}
+
+.highlight {
+	padding: 2%;
+}
+
+.highlight-yellow {
+	background-color: yellow;
+	color: black;
+}
+
+.highlight-red {
+	background-color: red;
+	color: white;
+}
+
+.highlight-green {
+	background-color: green;
+	color: white;
+}
+
+.highlight-blue {
+	background-color: blue;
+	color: white;
+}
+
+.highlight-orange {
+	background-color: orange;
+	color: white;
+}
+
+
+/**
+Spinner! http://tobiasahlin.com/spinkit/
+**/
+.spinner {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+
+  margin: 20px auto;
+  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
