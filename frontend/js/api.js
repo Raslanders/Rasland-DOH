@@ -42,8 +42,8 @@ var API = {
           success: function (msg) {
             if (msg) {
               API.saveFlightNumber();
-              console.log("Validation succesfull!");
-              window.location.replace("interest.php");
+              console.log("Validation succesfull!");     
+              window.location.replace("interest.php");             
             } else {
               console.log("Fail on validation of flight");
             }
@@ -90,7 +90,7 @@ var API = {
   },
 
   confirmRegistration: function() {
-    API.saveData(API.d.goal, 0);
+    API.saveData("goal", 0);
     API.register();
   },
 
@@ -99,18 +99,19 @@ var API = {
   },
 
   saveFlightNumber: function() {
-    API.saveData(API.d.flightNumber, document.getElementById("flightNumber").value);
+    API.saveData("flightNumber", document.getElementById("flightNumber").value);
   },
 
   saveData: function(obj, value) {
-    obj = value;
-    localStorage.setItem("flockData", API.d);      
+    console.log("Saving "+obj+" as: "+value);
+    API.d[obj] = value;
+    localStorage.setItem("flockData", JSON.stringify(API.d));      
   },
 
   loadData: function() {
     console.log("Loading data..");
     if (localStorage.getItem("flockData")) {
-      API.d = localStorage.getItem("flockData"); 
+      API.d = JSON.parse(localStorage.getItem("flockData")); 
       console.log(API.d);
     }   
   },
