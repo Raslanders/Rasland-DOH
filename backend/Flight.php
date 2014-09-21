@@ -18,7 +18,7 @@ Class Flight {
         // Check if instance is already in database
         if (sizeof($result) === 0) {
             //New flight
-            return getFlightInformation();
+            return $this->getFlightInformation();
         }
         else {
             //Flight already exist
