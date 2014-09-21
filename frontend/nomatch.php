@@ -21,9 +21,9 @@
 		<div class="row">
 		    <div class="large-8 small-12 column small-centered">		    	
 		    		Your flight
-		    		<h2 id="flight" class="center">MH17</h2>
+		    		<h2 id="flight" class="center">HV1261</h2>
 		    		Heading to 
-		    		<h2 id="destination" class="center">Taiwan</h2>	    		    	
+		    		<h2 id="destination" class="center">London</h2>	    		    	
 		    </div>
 		</div>
 
@@ -39,7 +39,7 @@
 		<div class="row margin-bottom">
 			<h3 class="flight center">Have a great flight!</h3>
 		</div>
-		
+
 		<div class="row margin-bottom">
 		    <div class="large-8 small-12 column small-centered"> 
 				<!-- Google Map -->
