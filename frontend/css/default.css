@@ -126,6 +126,16 @@ header img {
 .progress-dot.active {
 	background-image: url('../img/progress-active.png');
 }
+/*	________________________
+   |		INTEREST	   	|
+   \/\/\/\/\/\/\/\/\/\/\/\/\/ 
+*/
+input[type=radio] {
+	background-image: url('../img/check.png');
+	margin-top: .5em;
+	width: 2em;
+	height: 2em;
+}
 
 /*	________________________
    |	 	MATCH	     	|

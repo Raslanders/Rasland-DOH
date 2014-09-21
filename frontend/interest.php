@@ -23,8 +23,7 @@
 			      	</div>
 		    		<div class="small-11 column"> 
 		    			<div for="backpack">
-		    				Backpacker
-		    				<p>You intend to go backpacking or travel around in the country you are flying to.</p>
+		    				<h3>Backpacker</h3>
 		    			</div>
 		    		</div>
 		    	</div>
@@ -35,8 +34,18 @@
 			      	</div>
 		    		<div class="small-11 columns"> 
 		    			<div for="business">
-		    				Business
-		    				<p>You are on a business trip and are interested in meeting up with other people with the same goal.</p>
+		    				<h3>Business</h3>
+		    			</div>
+		    		</div>
+		    	</div>
+
+		    	<div class="row">		
+		    		<div class="small-1 columns">    		
+			      		<input type="radio" name="interest" value="business" id="business">
+			      	</div>
+		    		<div class="small-11 columns"> 
+		    			<div for="business">
+		    				<h3>Family travel</h3>
 		    			</div>
 		    		</div>
 		    	</div>
