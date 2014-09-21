@@ -72,11 +72,10 @@ h2 {
 }
 
 .button.confirm {
-	background-color: #AAA;
-	color: black;
+	background-color: #555;
 }
 .button.cancel {
-	background-color: #555;
+	background-color: #AAA;
 }
 
 /*	________________________

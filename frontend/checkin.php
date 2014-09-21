@@ -20,7 +20,7 @@
 		</div>
 		<div class="row">
 			<div class="large-8 small-12 column small-centered">
-				<a href="#" onclick="API.checkIn();" class="button large radius success width-100">Check in!</a>
+				<a href="#" onclick="API.checkIn();" class="button large radius confirm width-100">Check in!</a>
 			</div>
 		</div>
 	</body>
