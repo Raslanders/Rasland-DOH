@@ -65,7 +65,7 @@
 					<a href="nomatch.php" id="btn-nomatch" class="button radius cancel left">I can't find my match :(</a>
 				</div>
 				<div class="large-6 small-6 columns right">
-					<a href="flight.php"class="button radius confirm right">Found my match!</a>
+					<a href="#" onclick="API.foundMatch()" class="button radius confirm right">Found my match!</a>
 				</div>
 			</div>
 		</div>

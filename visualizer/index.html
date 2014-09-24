@@ -57,7 +57,51 @@
 	}
 	</style>
 	<script>
-	
+	var myVar = setInterval(superFunction, 1000);
+        
+        function superFunction() {
+            
+        
+            $.ajax({
+              type: "POST",
+              url: "../backend/index.php",
+              dataType: "json",
+              contentType: "application/x-www-form-urlencoded",
+              success: function (msg) {
+                if (msg) {
+                    //console.log("Retrieved lamp status");
+                    decoratePole(msg);
+                    
+                } else {
+                    console.log("Error1");
+                }
+              },
+              error: function(msg) {
+                console.log("Could not get light status");
+              },
+              data: 
+                "request=" + escape(JSON.stringify(
+                {
+                  action: 'getPoleColors',
+                })) 
+            });
+        }
+        
+        function decoratePole(pole) {
+            var totalMatches = 0;
+            var color;
+            //console.log(pole);
+            var i = 0;
+            while(typeof pole[i] !== 'undefined') {
+                console.log(pole[i]);
+                color[pole[i]['color']] = pole[i]['matches'];
+                totalMatches++;
+                i++;
+            
+                
+            }
+        }
+        
 
 	$(document).ready(function(){
 
@@ -72,6 +116,7 @@
 			console.log( items );
 		    maakZonnetje(items);
 		});
+        
 	});
 
 	function maakZonnetje(items){

@@ -123,6 +123,32 @@ var API = {
             })) 
     });
   },
+    
+  foundMatch: function() {
+    $.ajax({
+          type: "POST",
+          url: "../backend/index.php",
+          dataType: "json",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (msg) {
+            if (msg) {
+                console.log("Match finding succesfully confirmed");
+                window.location.replace("flight.php");
+            } else {
+                console.log("Error1");
+            }
+          },
+          error: function(msg) {
+            console.log("Could not confirm");
+          },
+          data: 
+            "request=" + escape(JSON.stringify(
+            {
+              action: 'foundMatch',
+              id: API.d.id,
+            })) 
+    });
+  },
 
   processFlightInfo: function() {
     $.ajax({

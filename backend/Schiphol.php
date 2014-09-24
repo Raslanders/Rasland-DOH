@@ -8,7 +8,7 @@ Class Schiphol {
     }
     
     public function getFlightInformation() {
-        $url = 'http://145.35.195.100/rest/flights/D/' . $this->flightNumber;
+        /*$url = 'http://145.35.195.100/rest/flights/D/' . $this->flightNumber;
         $opts = array(
             'http'=>array(
                 'method'=>"GET",
@@ -25,17 +25,20 @@ Class Schiphol {
         }
         else {
             $flights = $json['Flights']['Flight'];
-            $database = new Database();
+            
             $oldTime = explode(":",$flights['ScheduleTime']);
             $time = $oldTime[0] . ':' . $oldTime[1];
-            $values = array($flights['FlightNumber'], $time, $flights['Gate']);
+            $values = array($flights['FlightNumber'], $time, $flights['Gate']); */
+        $database = new Database(); 
+            $values = array($this->flightNumber, rand(0,24).':'.rand(0,60), 'D'.rand(1,85));
             $result = $database->nquery("INSERT INTO flights (FlightNumber, DepartureTime, GateNumber) VALUES (?, ?, ?)", $values);
             return array('statusCode' => '200',
                          'message' => 'Flight was added to the database');
-        }       
+               
     }
     
     public function validate() {
+        /**
         $url = 'http://145.35.195.100/rest/flights/D/' . $this->flightNumber;
         $opts = array(
             'http'=>array(
@@ -51,11 +54,11 @@ Class Schiphol {
             return array('statusCode' => '400',
                          'message' => 'Flight does not exist');
         }
-        else {
+        else { */
             //Flight is valid
             return array('statusCode' => '200',
                          'message' => 'Flight is valid');
-        } 
+        //} 
     }
     
     

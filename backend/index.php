@@ -4,6 +4,7 @@ require_once('Checkin.php');
 require_once('Schiphol.php');
 require_once('MatchChecker.php');
 require_once('MatchRik.php');
+require_once('LightController.php');
 $request = json_decode(html_entity_decode($_POST['request']), true);
 $response = -1;
 $file = 'log.txt';
@@ -32,8 +33,10 @@ if(isset($request['action'])) {
         $response = $requestObject->process();
     }
     else if($action === 'isMatched') {
+        $matchingObject = new MatchRik();
+        $matchingObject->checkForMatches();
         $matchChecker = new MatchChecker($request);
-        $response = $matchChecker->check();
+        $response = $matchChecker->check();        
     }
     else if($action === 'getFlightDetails') {
         $flightObject = new Flight('x');
@@ -43,21 +46,31 @@ if(isset($request['action'])) {
             $response['message'] = 'Your flight details have been succesfully found';
         }
         else {
-            return array('statusCode' => '400',
-                         'message' => 'You must send an id');
+            $response = array('statusCode' => '400',
+                              'message' => 'You must send an id');
         }
         
     }
+    else if($action === 'foundMatch') {
+        $lightController = new LightController();
+        $lightController->adjust($request);
+        $response = array('statusCode' => '200',
+                          'message' => 'I think this is correct');
+    }
+    else if($action === 'getPoleColors') {
+        $lightController = new LightController();
+        $response = $lightController->getLightStatus("A");
+        $response['statusCode'] = '200';
+    }
     else {
-        return array('statusCode' => ' 400',
-                     'message' => 'This action is invalid');
+        $response = array('statusCode' => ' 400',
+                          'message' => 'This action is invalid');
     }
 }
 if($response != -1) {
     http_response_code($response['statusCode']);
 }
 echo json_encode($response);
-$matchingObject = new MatchRik();
-$matchingObject->checkForMatches();
+
 
 ?>

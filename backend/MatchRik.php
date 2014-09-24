@@ -27,6 +27,20 @@ Class MatchRik {
                             $matchNumber = $this->getMatchNumber();
                             $values = array($persons[$i]['id'], $persons[$j]['id'], $color, "A", $matchNumber);
                             $database->nquery("INSERT INTO matches (uid1, uid2, color, poleName, matchNumber) VALUES (?, ?, ?, ?, ?)", $values);
+                            
+                            //Increase number of matches at pole with color 
+                            $values = array("A", $color);
+                            $results = $database->query("SELECT * FROM poles WHERE polename = ? AND color = ?", $values, PDO::FETCH_ASSOC);
+                            if(empty($results)) {
+                                //Does not already exist in database
+                                $values = array("A", $color, 1);
+                                $database->nquery("INSERT INTO poles (polename, color, matches) VALUES (?, ?, ?)", $values);
+                            }
+                            else {
+                                //Does already exist in database
+                                $values = array($results[0]['matches']+1, "A", $color);
+                                $database->nquery("UPDATE poles SET matches = ? WHERE polename = ? AND color = ?", $values);
+                            }
                         }
                     }
                 }
@@ -101,4 +115,7 @@ Class MatchRik {
     
     
 }
+
+$mr = new MatchRik();
+$mr->checkForMatches();
 ?>

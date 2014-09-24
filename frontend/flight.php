@@ -47,5 +47,8 @@
 	<!-- Internal javascript -->
 	<script src="js/api.js"></script>
     <script src="js/maps.js"></script>
-    <script src="js/flight.js"></script>	
+    <script src="js/flight.js"></script>
+    <script>
+        
+    </script>
 </html>
