@@ -12,11 +12,28 @@ class Pole{
 		$this->transavia = new Transaviatest();
 	}
 
-
-	//$flights never more than 3 objects
+    public function getLights(){
+        $colors = [];
+        foreach ($this->flights as $flight)
+        {
+            foreach($flight->getLightToColor() as $key => $value)
+            {
+                $colors[$key] = $value;
+            }
+        }
+        sort($colors);
+        
+                                  print_r("<br />");
+                                  print_r("KLeuren: ");
+                                  print_r($colors);
+                                  print_r("<br />");
+        return($colors);
+    }
+    
+    	//$flights never more than 3 objects
 	public function addFlight($flight){
 		print_r("<br />");
-		print_r("<---------");
+		print_r("<----ADD-----");
 		print_r("<br />");
 		print_r("<br />");
 	for($i =0; $i<3; $i++)
@@ -98,14 +115,14 @@ class Pole{
 				}
 			} 
 
-				print_r("<br />");
+				print_r("<br /> ADDFlight2index0: ");
 				print_r($index0);
 				print_r("<br />");
 				$lightIndexes = array(2, 3, 5, 6, 8, 9);
 				$colors = array($index0*3+1, $index0*3+2, $index0*3+3);
 				$this->flights[$index0]->setLights($lightIndexes, $colors);
 
-				print_r("<br />");
+				print_r("<br /> ADDFlight2.index1: ");
 				print_r($index1);
 				print_r("<br />");
 				$lightIndexes = array(1, 4, 7);
@@ -168,14 +185,14 @@ class Pole{
 				}
 			} 
             
-            print_r("<br />");
+            print_r("<br />ADDFligt3index1: ");
 			print_r($index1);
 			print_r("<br />");
 			$lightIndexes1 = $this->flights[$index1]->getLightIndexes();//smallest one keeps its values
 			$colors = array($index1*3+1, $index1*3+2, $index1*3+3);
 			$this->flights[$index1]->setLights($lightIndexes1, $colors);
 
-            print_r("<br />");
+            print_r("<br />ADDFlight3index0:");
 			print_r($index0);
 			print_r("<br />");
             			$lightIndexes2 = $this->flights[$index0]->getLightIndexes();//largest one loses one of its values
@@ -195,7 +212,7 @@ class Pole{
 			$this->flights[$index0]->setLights($lightIndexes2, $colors);
             
             
-            print_r("<br />");
+            print_r("<br />ADDFlight3newIndex:s");
 			print_r($newIndex);
 			print_r("<br />");
 			$lightIndexes = array_diff(array(1,2,3,4,5,6,7,8,9),array_merge($lightIndexes1,$lightIndexes2));
@@ -278,14 +295,14 @@ class Pole{
 					$index1 = 0;
 				}
 			} 
-				print_r("<br />");
+				print_r("<br />REM2index0:");
 				print_r($index0);
 				print_r("<br />");
 				$lightIndexes = array_merge($this->flights[$index0]->getLightIndexes(),$previousLights);// a
 				$colors = array($index0*3+1, $index0*3+2, $index0*3+3);
 				$this->flights[$index0]->setLights($lightIndexes, $colors);
 
-				print_r("<br />");
+				print_r("<br />REM2index1:");
 				print_r($index1);
 				print_r("<br />");
 				$lightIndexes = $this->flights[$index1]->getLightIndexes();

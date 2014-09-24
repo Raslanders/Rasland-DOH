@@ -15,19 +15,19 @@ Class Transaviatest {
         if (($handle = fopen($url, "r")) !== FALSE) { //open the csv file
             while (($data = fgetcsv($handle, 0, ",")) !== FALSE)    //go through the lines of the csv file
             {
-                if (($data[1].$data[2] == $flightNumber)) //if the flightnumber is equal to the flight number provided
+              //  if (($data[1].$data[2] == $flightNumber)) //if the flightnumber is equal to the flight number provided
                 {
 
-                    if ($this->highestDate($currentHighest,$data[3]) == $data[3] && $currentHighest != $data[3])//data[3] is higher than the currenthighest
-                    {
-                        $personsInGroup = [];
-                    }
-                    else if ($currentHighest != $data[3]) //then it was lower, so we do not add it
-                    {
-                     continue;   
-                    }
-                    //we have skipped if the date was lower as the newest date.
-                    $currentHighest = $data[3];
+//                    if ($this->highestDate($currentHighest,$data[3]) == $data[3] && $currentHighest != $data[3])//data[3] is higher than the currenthighest
+//                    {
+//                        $personsInGroup = [];
+//                    }
+//                    else if ($currentHighest != $data[3]) //then it was lower, so we do not add it
+//                    {
+//                     continue;   
+//                    }
+//                    //we have skipped if the date was lower as the newest date.
+    //                $currentHighest = $data[3];
 
                     //we found our flight
                     //print_r($data[0].";".$data[1].$data[2].";".$data[3].$data[4]);
