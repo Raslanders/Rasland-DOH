@@ -9,9 +9,12 @@ private $control;
 private $lightIndexes;
 private $colors;
     
+private $lightToColor;
     function __construct()
     {
-     $this->control = new HueControl();
+        
+    $this->lightToColor=[];
+     //$this->control = new HueControl();
      //$this->control->reset();
 
     }
@@ -21,30 +24,25 @@ private $colors;
 		$this->lightIndexes = $lightIndexes;
 		$this->colors = $colors;
         $totalLights = count($this->lightIndexes);
-        for($i = 1; $i<=$totalLights;$i++)
+        for($i = 0; $i<$totalLights;$i++)
         { 
-
-        $numberOfStepsTheSame = $totalLights/(3);
-        
-            
-        if($i <=3)
-            {
-            $this->control->turnOn($i);
-            print_r($colorIndex);
-
-            $this->control->setColor($i,$colors[$colorIndex]);
-                print_r("<br />");
-                print_r($colors);
-                print_r($colors[$colorIndex]);
-                print_r("<br />");
-            }
+            $numberOfStepsTheSame = ($totalLights)/(3);
+            $colorIndex = floor(($i)/$numberOfStepsTheSame);
+            $lightColor[$i] = $colors[$colorIndex];
         }
-        print_r("<--- />");
-//		print_r($lightIndexes);
-//		print_r("<br />");
-//		print_r($colors);
-//		print_r("<br />");
-//		print_r("<br />");
+        echo "colors\r\n";
+        print_r($lightIndexes);
+        print_r($lightColor);
+        $this->lightToColor = [];
+        $i = 0;
+        sort($lightIndexes);
+        foreach($lightIndexes as $light)
+        {
+            $this->lightToColor[$light] = $lightColor[$i];
+            $i++;
+        }
+        print_r($this->lightToColor);
+        echo "endColors\r\n";
 	}
 
 	public function getLightIndexes(){
@@ -54,6 +52,10 @@ private $colors;
 		return $this->flightNumber;
 	}
 
+    public function getlightToColor(){
+        return($this->lightToColor);
+    }
+    
 	public function setFlightNumber($flightNumber){
 		$this->flightNumber = $flightNumber;
 	}
