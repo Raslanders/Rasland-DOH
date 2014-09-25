@@ -89,17 +89,52 @@
         
         function decoratePole(pole) {
             var totalMatches = 0;
-            var color;
+            var color = [];
             //console.log(pole);
             var i = 0;
             while(typeof pole[i] !== 'undefined') {
-                console.log(pole[i]);
-                color[pole[i]['color']] = pole[i]['matches'];
-                totalMatches++;
-                i++;
-            
-                
+                //console.log(pole[i].color);
+                color[i] = pole[i];
+                totalMatches += parseInt(pole[i].matches);
+                i++;               
             }
+            console.log(totalMatches);
+            var LightColor = [];
+            var lightsLeft = 9;
+            var lights = 0;
+            //console.log('pre-sort:');
+            //console.log(color);
+            color.sort(customSort);
+            //console.log(color);
+            for(var i = 0; i < color.length; i++) {
+                //console.log(color[i].color);
+            
+                var numberOfLights;
+                numberOfLights = Math.max(1, Math.floor((color[i].matches/totalMatches)* lightsLeft));                
+                totalMatches -= color[i].matches;
+                console.log('lights left:'+lightsLeft);
+                //console.log(numberOfLights);
+                for(var j = 0; j < numberOfLights; j++) {
+                    //console.log(j);
+                    //console.log('Light' + parseInt(j+LightColor.length));
+                    console.log(parseInt(j+9-lightsLeft) + ' : ' + color[i].color);
+                    LightColor[j+(9-lightsLeft)] = color[i].color;
+                }
+                lightsLeft -= numberOfLights;
+            }
+            for(var i = 0 ; i < LightColor.length; i++) {
+                $("#"+i).css("background-color", LightColor[i]);
+                //console.log(LightColor[i]);
+            }
+            
+        }
+        
+        function customSort(a, b){
+            if (a.matches > b.matches)
+                return 1;
+            if (a.matches < b.matches)
+                return -1;
+            return 0;
         }
         
 

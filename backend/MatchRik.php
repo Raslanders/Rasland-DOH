@@ -51,14 +51,16 @@ Class MatchRik {
     }
     
     private function getColor() {
-        $database = new Database();
-        $randomNumber = rand(0, 2);
+        //$database = new Database();
+        $randomNumber = rand(0, 7);
         $colors = array(0 => 'green',
                          1 => 'orange',
                          2 => 'blue', 
-                         /*3 => 'orange',
+                         3 => 'orange',
                          4 => 'yellow',
-                         5 => 'purple'*/);
+                         5 => 'purple',
+                         6 => 'red',
+                         7 => 'cyan');
         //$this->changeColor($colors[$randomNumber]);
         return $colors[$randomNumber];       
         
