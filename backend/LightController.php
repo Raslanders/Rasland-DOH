@@ -30,6 +30,11 @@ Class LightController {
                 }
                 //Remove match from database
                 $values = array($request['id'], $request['id']);
+                $people = $database->query('SELECT uid1, uid2 FROM matches WHERE uid1 = ? OR uid2=?', $values);
+                $uid1 = array($people[0]['uid1']);
+                $uid2 = array($people[0]['uid2']);
+                $database->dquery('DELETE FROM persons WHERE id = ?', $uid1);
+                $database->dquery('DELETE FROM persons WHERE id = ?', $uid2);
                 $database->dquery('DELETE FROM matches WHERE uid1 = ? OR uid2=?', $values);               
             }   
         }
